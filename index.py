@@ -1,3 +1,5 @@
-import wrappers.pixabay_wrapper
+from wrappers.pixabay_wrapper import search_high_quality_videos
+from pprint import pprint
 
-# autopep8 - python auto-formatter
+results = search_high_quality_videos("exercise")
+pprint(results)
