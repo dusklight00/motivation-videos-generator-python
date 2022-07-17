@@ -1,5 +1,7 @@
-from wrappers.pixabay_wrapper import search_high_quality_videos
-from pprint import pprint
+from engine.video_generator import create_random_video_timeline
 
-results = search_high_quality_videos("exercise")
-pprint(results)
+create_random_video_timeline(
+    query="cat",
+    total_random_videos=2,
+    output_path="output.mp4"
+)

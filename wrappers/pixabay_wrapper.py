@@ -3,6 +3,7 @@ import requests
 import json
 from urllib.parse import quote
 from dotenv import load_dotenv
+from pprint import pprint
 load_dotenv()
 
 API_KEY = os.getenv("PIXABAY_API_KEY")
@@ -14,5 +15,5 @@ def search_videos(query):
 
 def search_high_quality_videos(query):
     results = search_videos(query)
-    high_quality_video_collection = [ hit["videos"]["large"] for hit in results["hits"] ]
+    high_quality_video_collection = [ hit["videos"]["large"] for hit in results["hits"] if hit["videos"]["large"]["url"] != "" ]
     return high_quality_video_collection
