@@ -11,7 +11,7 @@ def get_random_video(query):
     return random.choice(results)
 
 def bake_timeline(timeline, output_path):
-    process_name = "bake_timeline_" + str(uuid.uuid4()) 
+    process_name = "bake-timeline-" + str(uuid.uuid4()) 
 
     # Downloading all the clips to temp
     create_temp_dir(process_name)
